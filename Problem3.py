@@ -1,16 +1,34 @@
-primes = []
+# NOT DONE YET
 
 
-def generatePrimes():
+def generate_primes(number):
+    index = 2
+    upper = number - 1
+    largest_prime = index
+    while True:
+        if index >= upper:
+            break
+        if number % index == 0:
+            upper = number / index
+            if is_prime(upper) and upper > largest_prime:
+                #print "Set upper"
+                largest_prime = upper
+            if is_prime(index) and index > largest_prime:
+                #print "Set index"
+                largest_prime = index
+        index += 1
 
-    #    numbers = ((x, False) for x in xrange(2, 10));
-    #        if x[0] == 2:
-    #            x[1] = True
-    #        print x
+    print largest_prime
 
-    numbers = xrange(1, 10)
 
-    for idx, val in enumerate(numbers):
-        print idx
+def is_prime(number):
+    index = 2
+    while index < number:
+        if number % index == 0:
+            return False
+        index += 1
+    return True
 
-print generatePrimes()
+#print is_prime(10)
+#print is_prime(600851475143)
+generate_primes(600851475143)
