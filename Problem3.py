@@ -1,4 +1,4 @@
-# NOT DONE YET
+import datetime
 
 
 def generate_primes(number):
@@ -31,4 +31,10 @@ def is_prime(number):
 
 #print is_prime(10)
 #print is_prime(600851475143)
+
+start_time = datetime.datetime.now()
 generate_primes(600851475143)
+end_time = datetime.datetime.now()
+
+duration = end_time - start_time
+print duration
